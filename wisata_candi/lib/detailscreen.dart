@@ -177,7 +177,7 @@ class DetailScreen extends StatelessWidget {
                                     color: Colors.deepPurple[50],
                                   ),
                                   errorWidget: (context, url, error) =>
-                                      Icon(Icons.error),
+                                      const Icon(Icons.error),
                                 ),
                               ),
                             ),
