@@ -15,9 +15,7 @@ class DetailScreen extends StatelessWidget {
             Stack(
               children: [
                 Padding(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 8.0,
-                  ),
+                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(20),
                     child: Image.asset(
@@ -30,131 +28,83 @@ class DetailScreen extends StatelessWidget {
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(
-                    horizontal: 16.0,
-                    vertical: 32.0,
-                  ),
+                      horizontal: 16.0, vertical: 32.0),
                   child: Container(
-                      decoration: BoxDecoration(
-                        color: Colors.deepPurple[100]?.withOpacity(0.0),
-                        shape: BoxShape.circle,
-                      ),
-                      child: IconButton(
-                        onPressed: () {},
-                        icon: const Icon(Icons.arrow_back),
-                      )),
+                    decoration: BoxDecoration(
+                      color: Colors.deepPurple[100]?.withOpacity(0.0),
+                      shape: BoxShape.circle,
+                    ),
+                    child: IconButton(
+                      onPressed: () {},
+                      icon: const Icon(Icons.arrow_back),
+                    ),
+                  ),
                 ),
               ],
             ),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16),
+              padding: const EdgeInsets.symmetric(horizontal: 16),
               child: Column(
                 children: [
-                  SizedBox(
-                    height: 16,
-                  ),
+                  const SizedBox(height: 16),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(candi.name),
-                      style: const TextStyle(
-                        fontSize : 20, fontWeight: FontWeight.bold),
+                      Text(
+                        candi.name,
+                        style: const TextStyle(
+                            fontSize: 20, fontWeight: FontWeight.bold),
                       ),
-                      IconButton(onPressed: () {}, icon(Icons.favorite_border)),
+                      IconButton(
                         onPressed: () {},
                         icon: const Icon(Icons.favorite_border),
                       ),
                     ],
                   ),
-                  const SizedBox(
-                    height: 16,
-                  ),
+                  const SizedBox(height: 16),
                   Row(
                     children: [
-                      
-                      ),
-                      const Icon(
-                        Icons.location_on,
-                        color: Colors.red,
-                      ),
-                      const SizedBox(
-                        height: 8,
-                      ),
+                      const Icon(Icons.location_on, color: Colors.red),
+                      const SizedBox(width: 8),
                       const SizedBox(
                         width: 70,
-                        child: Text(
-                          'Lokasi',
-                          style: TextStyle(fontWeight: FontWeight.bold),
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
+                        child: Text('Lokasi',
+                            style: TextStyle(fontWeight: FontWeight.bold)),
                       ),
-                      Text(: $(candi.location)
-                        ': ${candi.location}',
-                      ),
+                      Text(': ${candi.location}'),
                     ],
                   ),
                   Row(
                     children: [
-                      const Icon(
-                        Icons.calendar_month,
-                        color: Colors.blue,
-                      ),
-                      const SizedBox(
-                        height: 8,
-                      ),
+                      const Icon(Icons.calendar_month, color: Colors.blue),
+                      const SizedBox(width: 8),
                       const SizedBox(
                         width: 70,
-                        child: Text(
-                          'Dibagun',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
+                        child: Text('Dibangun',
+                            style: TextStyle(fontWeight: FontWeight.bold)),
                       ),
-                      Text(
-                        ': ${candi.built}',
-                      ),
+                      Text(': ${candi.built}'),
                     ],
                   ),
                   Row(
                     children: [
-                      const Icon(
-                        Icons.house,
-                        color: Colors.green,
-                      ),
-                      const SizedBox(
-                        height: 8,
-                      ),
+                      const Icon(Icons.house, color: Colors.green),
+                      const SizedBox(width: 8),
                       const SizedBox(
                         width: 70,
-                        child: Text(
-                          'Dibangun',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
+                        child: Text('Tipe',
+                            style: TextStyle(fontWeight: FontWeight.bold)),
                       ),
-                      Text(
-                        ': ${candi.type}',
-                      ),
+                      Text(': ${candi.type}'),
                     ],
                   ),
-                  const SizedBox(
-                    height: 16,
-                  ),
-                  Divider(
-                    color: Colors.deepPurple.shade100,
-                  ),
-                  const SizedBox(
-                    height: 16,
-                  ),
-                  const Text(
-                    'Galeri',
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                  ),
-                  const SizedBox(
-                    height: 10,
-                  ),
+                  const SizedBox(height: 16),
+                  Divider(color: Colors.deepPurple.shade100),
+                  const SizedBox(height: 16),
+                  const Text('Galeri',
+                      style:
+                          TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+                  const SizedBox(height: 10),
                   SizedBox(
                     height: 100,
                     child: ListView.builder(
@@ -167,11 +117,11 @@ class DetailScreen extends StatelessWidget {
                             onTap: () {},
                             child: Container(
                               decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(12),
-                                  border: Border.all(
+                                borderRadius: BorderRadius.circular(12),
+                                border: Border.all(
                                     color: Colors.deepPurple.shade100,
-                                    width: 2,
-                                  )),
+                                    width: 2),
+                              ),
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(10),
                                 child: CachedNetworkImage(
@@ -191,37 +141,15 @@ class DetailScreen extends StatelessWidget {
                             ),
                           ),
                         );
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 32),
-                          child: container(
-                            decoration: BoxDecoration(
-                              color: Colors.deepPurple[190],
-                              shape: BoxShape.circle,
-                            )
-                            child: IconButton(
-                              onPressed: () {}, icon: const Icon(Icons.arrow_back)),
-                            )
-                          )
-                        )
                       },
                     ),
                   ),
-                  const SizedBox(
-                    height: 4,
-                  ),
-                  const Text(
-                    'Tap Untuk Memperbesar',
-                    style: TextStyle(fontSize: 12, color: Colors.black54),
-                  ),
+                  const SizedBox(height: 4),
+                  const Text('Tap Untuk Memperbesar',
+                      style: TextStyle(fontSize: 12, color: Colors.black54)),
                 ],
               ),
             ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16),
-              child: coloumn(
-                
-              )
-            )
           ],
         ),
       ),
