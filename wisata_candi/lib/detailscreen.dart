@@ -46,14 +46,20 @@ class DetailScreen extends StatelessWidget {
               ],
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
+              padding: EdgeInsets.symmetric(horizontal: 16),
               child: Column(
                 children: [
+                  SizedBox(
+                    height: 16,
+                  ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(candi.name),
-                      IconButton(
+                      style: const TextStyle(
+                        fontSize : 20, fontWeight: FontWeight.bold),
+                      ),
+                      IconButton(onPressed: () {}, icon(Icons.favorite_border)),
                         onPressed: () {},
                         icon: const Icon(Icons.favorite_border),
                       ),
@@ -64,6 +70,8 @@ class DetailScreen extends StatelessWidget {
                   ),
                   Row(
                     children: [
+                      
+                      ),
                       const Icon(
                         Icons.location_on,
                         color: Colors.red,
@@ -75,12 +83,12 @@ class DetailScreen extends StatelessWidget {
                         width: 70,
                         child: Text(
                           'Lokasi',
-                          style: TextStyle(
+                          style: TextStyle(fontWeight: FontWeight.bold),
                             fontWeight: FontWeight.bold,
                           ),
                         ),
                       ),
-                      Text(
+                      Text(: $(candi.location)
                         ': ${candi.location}',
                       ),
                     ],
@@ -183,6 +191,18 @@ class DetailScreen extends StatelessWidget {
                             ),
                           ),
                         );
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 32),
+                          child: container(
+                            decoration: BoxDecoration(
+                              color: Colors.deepPurple[190],
+                              shape: BoxShape.circle,
+                            )
+                            child: IconButton(
+                              onPressed: () {}, icon: const Icon(Icons.arrow_back)),
+                            )
+                          )
+                        )
                       },
                     ),
                   ),
@@ -196,6 +216,12 @@ class DetailScreen extends StatelessWidget {
                 ],
               ),
             ),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16),
+              child: coloumn(
+                
+              )
+            )
           ],
         ),
       ),
