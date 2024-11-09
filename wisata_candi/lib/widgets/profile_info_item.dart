@@ -7,14 +7,16 @@ class ProfileInfoItem extends StatelessWidget {
   final bool showEditIcon;
   final VoidCallback? onEditPressed;
   final Color iconColor;
-  const ProfileInfoItem(
-      {super.key,
-      required this.icon,
-      required this.label,
-      required this.value,
-      this.showEditIcon = false,
-      this.onEditPressed,
-      required this.iconColor});
+
+  const ProfileInfoItem({
+    super.key,
+    required this.icon,
+    required this.label,
+    required this.value,
+    this.showEditIcon = false,
+    this.onEditPressed,
+    required this.iconColor,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -24,17 +26,12 @@ class ProfileInfoItem extends StatelessWidget {
           width: MediaQuery.of(context).size.width / 3,
           child: Row(
             children: [
-              Icon(
-                icon,
-                color: iconColor,
-              ),
-              SizedBox(
-                width: 8,
-              ),
+              Icon(icon, color: iconColor),
+              SizedBox(width: 8),
               Text(
                 label,
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-              ),
+              )
             ],
           ),
         ),
@@ -48,7 +45,7 @@ class ProfileInfoItem extends StatelessWidget {
           InkWell(
             onTap: onEditPressed,
             child: Icon(Icons.edit),
-          )
+          ),
       ],
     );
   }
