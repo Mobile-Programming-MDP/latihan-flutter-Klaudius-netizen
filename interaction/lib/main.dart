@@ -48,14 +48,16 @@ class _HomeScreenState extends State<HomeScreen> {
                   color: Colors.blue,
                   borderRadius: BorderRadius.circular(25),
                 ),
+                child: Center(
+                  child: Text(
+                    'Aksi',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
               ),
             ),
             SizedBox(
               height: 16,
-            ),
-            Text(
-              'Aksi',
-              style: TextStyle(color: Colors.black),
             ),
             Text(
               actionLabel,
