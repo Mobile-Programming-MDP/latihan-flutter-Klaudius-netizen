@@ -5,6 +5,7 @@ import 'package:wisata_candi/favorite_screen.dart';
 import 'package:wisata_candi/home_screen.dart';
 import 'package:wisata_candi/profil_screen.dart';
 import 'package:wisata_candi/search_screen.dart';
+import 'package:wisata_candi/sign_up_screen.dart';
 
 void main() {
   runApp(const MainApp());
@@ -18,7 +19,7 @@ class MainApp extends StatelessWidget {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Wisata Candi',
-      home: MainScreen(),
+      home: SignUpScreen(),
     );
   }
 }
@@ -33,10 +34,10 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
   int _currentIndex = 0;
   final List<Widget> _children = [
-    HomeScreen(),
-    SearchScreen(),
-    FavoriteScreen(),
-    ProfileScreen(),
+    const HomeScreen(),
+    const SearchScreen(),
+    const FavoriteScreen(),
+    const ProfileScreen(),
   ];
   @override
   Widget build(BuildContext context) {
@@ -51,7 +52,7 @@ class _MainScreenState extends State<MainScreen> {
                 _currentIndex = index;
               });
             },
-            items: [
+            items: const [
               BottomNavigationBarItem(
                   icon: Icon(
                     Icons.home,
