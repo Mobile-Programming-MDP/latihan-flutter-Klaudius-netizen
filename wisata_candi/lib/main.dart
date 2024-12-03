@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:wisata_candi/data/candi_data.dart';
-import 'package:wisata_candi/detail_screen.dart';
 import 'package:wisata_candi/favorite_screen.dart';
 import 'package:wisata_candi/home_screen.dart';
 import 'package:wisata_candi/profil_screen.dart';
@@ -17,10 +15,28 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Wisata Candi',
-      home: SignUpScreen(),
+    return MaterialApp(
+      theme: ThemeData(
+        appBarTheme: const AppBarTheme(
+          iconTheme: IconThemeData(color: Colors.deepPurple),
+          titleTextStyle: TextStyle(
+              color: Colors.deepPurple,
+              fontSize: 20,
+              fontWeight: FontWeight.bold),
+        ),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple)
+            .copyWith(
+                primary: Colors.deepPurple, surface: Colors.deepPurple[50]),
+      ),
+      title: "Wisata Candi",
+      // home: const SignUpScreen(),
+      initialRoute: '/signin',
+      routes: {
+        '/homescreen': (context) => const MainScreen(),
+        '/signin': (context) => const SignInScreen(),
+        '/signup': (context) => const SignUpScreen(),
+      },
+      //MainScreen(),
     );
   }
 }
@@ -33,6 +49,7 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
+  //TODO 1 : Deklarasi Var
   int _currentIndex = 0;
   final List<Widget> _children = [
     const HomeScreen(),
@@ -43,46 +60,56 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      //TODO 2: body
       body: _children[_currentIndex],
+      //TODO 3 : bottomNavigationBar
       bottomNavigationBar: Theme(
-          data: Theme.of(context).copyWith(canvasColor: Colors.deepPurple[850]),
-          child: BottomNavigationBar(
-            currentIndex: _currentIndex,
-            onTap: (index) {
-              setState(() {
-                _currentIndex = index;
-              });
-            },
-            items: const [
-              BottomNavigationBarItem(
-                  icon: Icon(
-                    Icons.home,
-                    color: Colors.deepPurple,
-                  ),
-                  label: 'Home'),
-              BottomNavigationBarItem(
-                  icon: Icon(
-                    Icons.search,
-                    color: Colors.deepPurple,
-                  ),
-                  label: 'Search'),
-              BottomNavigationBarItem(
-                  icon: Icon(
-                    Icons.favorite,
-                    color: Colors.deepPurple,
-                  ),
-                  label: 'Favorite'),
-              BottomNavigationBarItem(
-                  icon: Icon(
-                    Icons.person,
-                    color: Colors.deepPurple,
-                  ),
-                  label: 'Profile')
-            ],
-            selectedItemColor: Colors.deepPurple,
-            unselectedItemColor: Colors.deepPurple[100],
-            showUnselectedLabels: true,
-          )),
+        //TODO 4 : child theme
+        data: Theme.of(context).copyWith(
+          canvasColor: Colors.deepPurple[50],
+        ),
+        child: BottomNavigationBar(
+          currentIndex: _currentIndex,
+          onTap: (index) {
+            setState(() {
+              _currentIndex = index;
+            });
+          },
+          selectedItemColor: Colors.deepPurple,
+          unselectedItemColor: Colors.deepPurple[100],
+          showUnselectedLabels: true,
+          items: const [
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.home,
+                color: Colors.deepPurple,
+              ),
+              label: "Home",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.search,
+                color: Colors.deepPurple,
+              ),
+              label: "Search",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.favorite,
+                color: Colors.deepPurple,
+              ),
+              label: "Favorite",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.person,
+                color: Colors.deepPurple,
+              ),
+              label: "Profile",
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
