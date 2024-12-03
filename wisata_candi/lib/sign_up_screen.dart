@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:wisata_candi/home_screen.dart';
+import 'package:wisata_candi/main.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
@@ -113,7 +115,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   ),
                   const SizedBox(height: 20),
                   ElevatedButton(
-                    onPressed: _signUp,
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const MainScreen()));
+                    },
                     child: const Text('Daftar'),
                   ),
                 ],
